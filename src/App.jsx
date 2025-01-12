@@ -1,4 +1,11 @@
-import { GitHub, Linkedin, Mail, Phone, Calendar, MapPin } from "lucide-react";
+import React from "react";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
 const App = () => {
   const personalInfo = {
@@ -33,6 +40,7 @@ const App = () => {
         "JWT",
       ],
       github: "https://github.com/sabaris-66/Blog_Live_Preview",
+      preview: "https://github.com/sabaris-66/Blog_Live_Preview",
     },
     {
       title: "Members Only Clubhouse",
@@ -46,7 +54,7 @@ const App = () => {
         "EJS",
       ],
       github: "https://github.com/sabaris-66/members-only",
-      preview: "https://github.com/sabaris-66/members-only",
+      preview: "https://members-only-jfvs.onrender.com/",
     },
     {
       title: "Shopping Cart",
@@ -54,7 +62,7 @@ const App = () => {
         "React-based e-commerce platform with Router and SPA implementation.",
       technologies: ["React", "React Router", "CSS", "JavaScript"],
       github: "https://github.com/sabaris-66/shopping-cart",
-      preview: "Shopping Cart - Live Preview",
+      preview: "https://wonderful-profiterole-ad426e.netlify.app/",
     },
   ];
 
@@ -83,35 +91,35 @@ const App = () => {
               href={`mailto:${personalInfo.email}`}
               className="flex items-center gap-2"
             >
-              <Mail size={20} /> {personalInfo.email}
+              <FaEnvelope size={20} /> {personalInfo.email}
             </a>
             <a
               href={`tel:${personalInfo.phone}`}
               className="flex items-center gap-2"
             >
-              <Phone size={20} /> {personalInfo.phone}
+              <FaPhone size={20} /> {personalInfo.phone}
             </a>
             <span className="flex items-center gap-2">
-              <MapPin size={20} /> {personalInfo.location}
+              <FaMapMarkerAlt size={20} /> {personalInfo.location}
             </span>
-            <div className="flex gap-4 mt-4">
-              <a
-                href={personalInfo.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-blue-200"
-              >
-                <GitHub size={24} />
-              </a>
-              <a
-                href={personalInfo.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-blue-200"
-              >
-                <Linkedin size={24} />
-              </a>
-            </div>
+            {/* <div className="flex gap-4 mt-4"> */}
+            <a
+              href={personalInfo.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-200 flex items-center gap-2"
+            >
+              <FaGithub size={24} /> GitHub
+            </a>
+            <a
+              href={personalInfo.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-200 flex items-center gap-2"
+            >
+              <FaLinkedin size={24} /> LinkedIn
+            </a>
+            {/* </div> */}
           </div>
         </div>
       </header>
@@ -130,6 +138,7 @@ const App = () => {
         </div>
       </section>
 
+      {/* Remaining sections remain unchanged */}
       {/* Skills Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -178,7 +187,7 @@ const App = () => {
           </div>
         </div>
       </section>
-
+      {/* Projects and Footer sections */}
       {/* Projects Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -205,7 +214,7 @@ const App = () => {
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-800 flex items-center gap-2"
                   >
-                    <GitHub size={20} /> Code
+                    <FaGithub /> Code
                   </a>
                   {project.preview && (
                     <a
@@ -271,7 +280,7 @@ const App = () => {
               href={`mailto:${personalInfo.email}`}
               className="hover:text-blue-400"
             >
-              <Mail size={24} />
+              <FaEnvelope size={24} />
             </a>
             <a
               href={personalInfo.github}
@@ -279,7 +288,7 @@ const App = () => {
               rel="noopener noreferrer"
               className="hover:text-blue-400"
             >
-              <GitHub size={24} />
+              <FaGithub size={24} />
             </a>
             <a
               href={personalInfo.linkedin}
@@ -287,7 +296,7 @@ const App = () => {
               rel="noopener noreferrer"
               className="hover:text-blue-400"
             >
-              <Linkedin size={24} />
+              <FaLinkedin size={24} />
             </a>
           </div>
         </div>
