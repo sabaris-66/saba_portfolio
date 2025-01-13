@@ -19,6 +19,20 @@ const App = () => {
     github: "https://github.com/sabaris-66",
   };
 
+  const experience = {
+    title: "Self-Taught Full-Stack Developer",
+    company: "The Odin Project",
+    employmentType: "Self-Employed",
+    location: "Remote",
+    dates: "November 2023 – Present",
+    description: [
+      "Completed The Odin Project's Full-Stack JavaScript curriculum, covering frontend, backend, and deployment.",
+      "Built multiple projects, including a Personal Blog, Members Only Clubhouse, and Shopping Cart app using PERN stack (PostgreSQL, Express, React, Node.js).",
+      "Gained hands-on experience in React.js, Node.js, RESTful APIs, and deployment platforms like Netlify and Render.",
+      "Improved problem-solving skills by independently tackling challenges in modern web development.",
+    ],
+  };
+
   const skills = {
     frontend: ["React", "HTML5", "CSS3", "JavaScript ES6+"],
     backend: ["Node.js", "Express.js", "RESTful API development"],
@@ -135,6 +149,39 @@ const App = () => {
             a commitment to continuous learning and the application of modern
             technologies to create efficient and user-friendly applications.
           </p>
+        </div>
+      </section>
+
+      {/* New Experience Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">Experience</h2>
+          <div className="bg-gray-50 rounded-lg p-8 shadow-sm">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div>
+                <h3 className="text-xl font-bold text-blue-600">
+                  {experience.title}
+                </h3>
+                <p className="text-gray-700 font-medium">
+                  {experience.company}
+                </p>
+              </div>
+              <div className="text-gray-600 mt-2 md:mt-0">
+                <p className="italic">{experience.dates}</p>
+                <p className="text-sm">
+                  {experience.location} • {experience.employmentType}
+                </p>
+              </div>
+            </div>
+            <ul className="space-y-3 text-gray-700">
+              {experience.description.map((item, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="text-blue-600 mr-2">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
